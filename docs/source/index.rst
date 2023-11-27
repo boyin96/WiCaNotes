@@ -1,22 +1,21 @@
-Welcome to Lumache's documentation!
+欢迎来到无线通信的学习文档！
 ===================================
 
-**Lumache** (/lu'make/) is a Python library for cooks and food lovers
-that creates recipes mixing random ingredients.
-It pulls data from the `Open Food Facts database <https://world.openfoodfacts.org/>`_
-and offers a *simple* and *intuitive* API.
-
-Check out the :doc:`usage` section for further information, including
-how to :ref:`installation` the project.
+文档致力于研究无线通信相关概念与算法，以及在机器学习和编程领域的知识和笔记。
 
 .. note::
 
-   This project is under active development.
-
-Contents
---------
+   该项目正在积极开发中。欢迎提出问题、分享你的学习经验，或者为仓库做出贡献。
 
 .. toctree::
+   :caption: 无线通信
+   :maxdepth: 1
 
-   usage
-   api
+   channel
+
+
+.. toctree::
+   :caption: Python
+   :maxdepth: 1
+
+   magic_functions
