@@ -9,32 +9,14 @@
 
 .. _introduction:
 
-Introduction
-============
-
-You need to know some basic calculus in order to understand how functions change over time (derivatives), and to calculate the total amount of a quantity that accumulates over a time period (integrals). The language of calculus will allow you to speak precisely about the properties of functions and better understand their behaviour.
-
-Normally taking a calculus course involves doing lots of tedious calculations by hand, but having the power of computers on your side can make the process much more fun. This section describes the key ideas of calculus which you'll need to know to understand machine learning concepts.
-
-
-.. _derivative:
-
-Derivatives
-===========
-
-A derivative can be defined in two ways:
-
-  #. Instantaneous rate of change (Physics)
-  #. Slope of a line at a specific point (Geometry)
-
-Both represent the same principle, but for our purposes it’s easier to explain using the geometric definition.
-
-Introduction
+简介
 ------------
 
 欢迎来到 Python 常见魔法函数文档。本文档将介绍 Python 中一些被称为“魔法函数”的特殊方法，这些方法在类中有特殊的用途。
 
-Common Magic Functions
+.. _functions:
+
+常见魔法函数与使用
 ----------------------
 
 本节将介绍一些常见的魔法函数及其用途。
@@ -54,7 +36,7 @@ Common Magic Functions
 
 `__len__` 方法返回对象的长度，通常在使用 `len()` 函数时调用。
 
-Usage
+使用
 -----
 
 本节将演示如何使用这些魔法函数。
@@ -74,7 +56,7 @@ Usage
 
 为类定义 `__len__` 方法，并在需要获取对象长度时使用 `len()` 函数。
 
-References
+参考
 ----------
 
 以下是一些参考文章，可以深入学习 Python 魔法函数的更多内容：
