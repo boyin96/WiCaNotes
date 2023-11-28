@@ -10,6 +10,7 @@ Q. 构建抽象类的两种方式有何不同？
 ---------------------------
 
 使用 `ABC` 作为基类
+
 .. code-block:: python
 
     from abc import ABC, abstractmethod
@@ -24,6 +25,7 @@ Q. 构建抽象类的两种方式有何不同？
             pass
 
 使用 `ABCMeta`
+
 .. code-block:: python
 
     from abc import ABCMeta, abstractmethod
@@ -37,8 +39,8 @@ Q. 构建抽象类的两种方式有何不同？
         def another_abstract_method(self):
             pass
 
-
 A. 两种方式是一样的。根据 `Python 源码 <https://github.com/python/cpython/blob/main/Lib/abc.py>`_：
+
 .. code-block:: python
 
     class ABC(metaclass=ABCMeta):
