@@ -14,7 +14,7 @@ Q & A
 1. 构建抽象类的两种方式有何不同？
 ___________________________
 
-使用 `ABC` 作为基类
+使用 ``ABC`` 作为基类
 
 .. code-block:: python
 
@@ -29,7 +29,7 @@ ___________________________
         def another_abstract_method(self):
             pass
 
-使用 `ABCMeta`
+使用 ``ABCMeta``
 
 .. code-block:: python
 
