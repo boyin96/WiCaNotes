@@ -97,9 +97,7 @@
 ``__enter__(self)``: 进入上下文时执行的操作，与 with 语句配合使用。__enter__ 方法应该返回一个对象，这个对象会被赋值给 as 子句中的变量，使得在 with 语句块内可以使用。
 
 ``__exit__(self, exc_type, exc_value, traceback)``: 退出上下文时执行的操作，与 with 语句配合使用。self: 表示对象本身，即离开上下文管理器的对象。
-exc_type: 表示在 with 语句块内发生的异常的类型，如果没有异常则为 None。
-exc_value: 表示在 with 语句块内发生的异常的值，如果没有异常则为 None。
-traceback: 表示在 with 语句块内发生的异常的追踪对象，如果没有异常则为 None。
+exc_type: 表示在 with 语句块内发生的异常的类型，如果没有异常则为 None。exc_value: 表示在 with 语句块内发生的异常的值，如果没有异常则为 None。traceback: 表示在 with 语句块内发生的异常的追踪对象，如果没有异常则为 None。
 
 
 .. _magic_vars:
