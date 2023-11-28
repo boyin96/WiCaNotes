@@ -11,6 +11,7 @@
    :caption: 无线通信
    :maxdepth: 1
 
+   wireless_channel
    channel
 
 
