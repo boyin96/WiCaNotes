@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3bceeb8a-0821-4702-a3ee-511af78f0083" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/docs/source/design_patterns.rst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/source/questions.rst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/source/design_patterns.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/source/design_patterns.rst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/source/index.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/source/index.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/source/tip.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/source/tip.rst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +23,9 @@
   &quot;associatedIndex&quot;: 7
 }</component>
   <component name="ProjectId" id="2Ym4QUWnGVmRrK6U19OmtP5BdXJ" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
