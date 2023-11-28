@@ -6,8 +6,13 @@ Q & A
 
 该文档收集了在 Python 编程中的一些疑惑与解答。
 
-Q. 构建抽象类的两种方式有何不同？
----------------------------
+.. contents:: :local:
+
+
+.. _abstract_con:
+
+1. 构建抽象类的两种方式有何不同？
+___________________________
 
 使用 `ABC` 作为基类
 
@@ -39,8 +44,7 @@ Q. 构建抽象类的两种方式有何不同？
         def another_abstract_method(self):
             pass
 
-A. 两种方式是一样的。根据 `Python 源码 <https://github.com/python/cpython/blob/main/Lib/abc.py>`_：
-------------------------------------------------------------------------------------------------------------
+两种方式是一样的。根据 `Python 源码 <https://github.com/python/cpython/blob/main/Lib/abc.py>`_：
 
 .. code-block:: python
 
