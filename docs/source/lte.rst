@@ -20,9 +20,9 @@ LTE 物理层
 相关知识
 ----------
 
-- **空中接口（Air Interface）：
+空中接口（Air Interface）：
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-** LTE 采用的是基于 **Orthogonal Frequency Division Multiplexing Access（OFDMA）** 技术的无线多址接入。其下行采用 OFDM，上行采用与之相类似的 **Single-Carrier Frequency Division Multiplexing（SC-FDM）**。相比之前的多址接入技术，OFDMA 具有抗多径衰落、支持 MIMO、频率选择等诸多优势。
+LTE 采用的是基于 **Orthogonal Frequency Division Multiplexing Access（OFDMA）** 技术的无线多址接入。其下行采用 OFDM，上行采用与之相类似的 **Single-Carrier Frequency Division Multiplexing（SC-FDM）**。相比之前的多址接入技术，OFDMA 具有抗多径衰落、支持 MIMO、频率选择等诸多优势。
 
 - **频谱带宽（Frequency Bands）：** 3GPP规定 **Frequency-division Duplex（FDD）** 与 **Time-division Duplex（TDD）**，频分双工与时分双工的频带资源如下：
 **FDD** for Evolved Universal Terrestrial Radio Access Network（E-UTRAN）:
@@ -90,7 +90,7 @@ LTE 物理层
         x(t)=\sum_{k=1}^N a_k e^{j 2 \pi f_k t}=\sum_{k=1}^N a_k e^{j 2 \pi k \Delta f t}
         \end{equation}
 
-    实际操作是离散的OFDM表示，这里需要假设信道的采样率为 :math:`F`，则采时间为 :math:`T=1/F`，采样点数为 :math:`N` ，假设符号周期为 :math:`T_s=NT` 则有：
+    实际操作是离散的OFDM表示，这里需要假设信道的采样率为 :math:`F`，则采时间为 :math:`T=1/F`，采样点数为 :math:`N` ，假设符号周期为 :math:`T_s=NT`，则有：
 
        .. math::
 
@@ -100,14 +100,15 @@ LTE 物理层
 
     可以看到上述表示可以很自然使用 IFFT 变换实现，这也是使用 OFDM 如此广泛的原因。我们也可以从表示看出一个 OFDM 符号是包含目前所有已经映射好的符号 :math:`a_k` 的调制求和。
 
-  - **step 3**. 在经过 OFDM 调制后，一个 OFDM 符号就已经生成了，最后还需要给每一个符号加上一个循环前缀，其实就是将该符号的后面一部分复制到前面以消除符号间干扰（ISI）和子载波间干扰（ICI）。每一个 OFDM 符号的时域持续时间，它是由两部分构成的循环前缀加上信号周期，信号周期 1/15000 s，即是，大约66.7 :math:`\mu` s。
+  - **step 3**. 在经过 OFDM 调制后，一个 OFDM 符号就已经生成了，最后还需要给每一个符号加上一个循环前缀，其实就是将该符号的后面一部分复制到前面以消除符号间干扰（ISI）和子载波间干扰（ICI）。每一个 OFDM 符号的时域持续时间，它是由两部分构成的循环前缀加上信号周期，信号周期 1/15000 :math:`s`，即是，大约66.7 :math:`\mu s`。
 
- - **循环前缀（Cyclic Prefix）：** 循环前缀有不同的大小，由于存在多径效应而导致的符号间干扰，同时为保证子载波之间的正交性，前缀是符号尾部的一段复制。LTE协议中按照下图规定了循环前缀的长度：
+- **循环前缀（Cyclic Prefix）：** 循环前缀有不同的大小，由于存在多径效应而导致的符号间干扰，同时为保证子载波之间的正交性，前缀是符号尾部的一段复制。LTE协议中按照下图规定了循环前缀的长度：
 
 .. image:: images/cycle.png
     :align: center
 
- - **频域调度（Frequency-Domain Scheduling）：** 频域的调度是 LTE 中很重要的一点，由于 LTE 本身支持不同的频率带宽，OFDM 可以根据 IFFT 和 FFT 选择不同的符号长度，变化的点数。尽管 LTE 并没有规定带宽与 FFT 长度之间的关系，但一般2048与20MHz相关联，其他分配如下图：
+
+- **频域调度（Frequency-Domain Scheduling）：** 频域的调度是 LTE 中很重要的一点，由于 LTE 本身支持不同的频率带宽，OFDM 可以根据 IFFT 和 FFT 选择不同的符号长度，变化的点数。尽管 LTE 并没有规定带宽与 FFT 长度之间的关系，但一般2048与20MHz相关联，其他分配如下图：
 
 .. image:: images/schedule.png
     :align: center
