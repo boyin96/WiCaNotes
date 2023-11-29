@@ -11,15 +11,16 @@ LTE 物理层
 
 简介
 ------------
-本文介绍 **Long Term Evolution (LTE)** 的无线接入技术以及 **Physical Layer (PHY)**，这里主要讲解一下关于 LTE 的物理层 OFDM 相关知识点，了解其底层设计的基本结构。
+
+本文介绍 **Long Term Evolution (LTE)** 的无线接入技术以及 **Physical Layer (PHY)**，这里主要学习一下关于 LTE 的物理层 OFDM 相关知识点，了解其底层设计的基本结构。
 
 
 .. _related:
 
 相关知识
-__________
+----------
 
-- **空中接口 (Air Interface)：** LTE采用的是基于 **Orthogonal Frequency Division Multiplexing Access (OFDMA**) 技术的无线多址接入。其下行采用OFDM，上行采用与之相类似的 **Single-Carrier Frequency Division Multiplexing (SC-FDM)**。相比之前的多址接入技术，OFDMA具有抗多径衰落、支持MIMO、频率选择等诸多优势。
+- **空中接口（Air Interface）：** LTE 采用的是基于 **Orthogonal Frequency Division Multiplexing Access (OFDMA)** 技术的无线多址接入。其下行采用OFDM，上行采用与之相类似的 **Single-Carrier Frequency Division Multiplexing (SC-FDM)**。相比之前的多址接入技术，OFDMA具有抗多径衰落、支持MIMO、频率选择等诸多优势。
 
 - **频谱带宽 (Frequency Bands)：** LTE频谱带宽被3GPP所规定，**Frequency-division Duplex (FDD)** 与 **Time-division Duplex (TDD)**，频分双工与时分双工的频带资源如下 (1-43)：
 **FDD**:
@@ -63,6 +64,6 @@ $$
 .. _reference:
 
 参考
-__________
+------------
 
 - Zarrinkoub, Houman. Understanding LTE with MATLAB: from mathematical modeling to simulation and prototyping. John Wiley & Sons, 2014.
