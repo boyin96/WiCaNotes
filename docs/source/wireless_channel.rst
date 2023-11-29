@@ -49,19 +49,20 @@ ___________________________
 
 .. math::
 
-\begin{aligned}
+    \begin{aligned}
     y(t) & =\left(e^{-i 2 \pi f_{\mathrm{c}} \frac{d_1}{c}}+e^{-i 2 \pi f_{\mathrm{c}} \frac{d_2}{c}}\right) x(t) \\
     & =\left(e^{-i 2 \pi \frac{d_1}{\lambda}}+e^{-i 2 \pi \frac{d_2}{\lambda}}\right) x(t),
-\end{aligned}
+    \end{aligned}
 
-假设在 (a) 位置时，信号刚好能够叠加达到最大，即是， :math:`y(t)=2x(t)` 。接着假设接收端向右移动了 :math:`d`，则在 (b) 时有：
+假设在(a)位置时，信号刚好能够叠加达到最大，即是， :math:`y(t)=2x(t)`\ ，则在(b)时有：
 
 .. math::
 
-   \begin{aligned}
-y(t) & =\left(e^{-i 2 \pi \frac{d}{\lambda}}+e^{-i 2 \pi \frac{-d}{\lambda}}\right) x(t) \\
-& =2 \cos \left(2 \pi \frac{d}{\lambda}\right) x(t) .
-\end{aligned}
+
+    \begin{aligned}
+    y(t) & =\left(e^{-i 2 \pi \frac{d}{\lambda}}+e^{-i 2 \pi \frac{-d}{\lambda}}\right) x(t) \\
+    & =2 \cos \left(2 \pi \frac{d}{\lambda}\right) x(t) .
+    \end{aligned}
 
 由表达式可以看出，信号在\ :math:`\lambda/2`\ 之内会呈现周期性变化，也就是说只要移动的距离不超过\ :math:`\lambda/2`\ ，那么我们可以认为是时不变的，如果此时移动速度为\ :math:`v`\ ，那么：
 
