@@ -32,6 +32,7 @@ LTE 采用的是基于 **Orthogonal Frequency Division Multiplexing Access（OFD
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 3GPP规定 **Frequency-division Duplex（FDD）** 与 **Time-division Duplex（TDD）** 的频带资源如下：
+
 **FDD** for Evolved Universal Terrestrial Radio Access Network（E-UTRAN）:
 
 .. image:: images/fdd.png
