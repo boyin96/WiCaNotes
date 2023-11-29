@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3bceeb8a-0821-4702-a3ee-511af78f0083" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/docs/source/lte.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/source/lte.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/source/wireless_channel.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/source/wireless_channel.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/source/magic_functions.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/source/magic_functions.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/source/sca.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/source/sca.rst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
