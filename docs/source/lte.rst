@@ -95,7 +95,7 @@ OFDM 的多子载波传输（OFDM Multicarrier Transmission）
    .. math::
 
         \begin{equation}
-        B W=N_{r b} \Delta f
+        B W=N \Delta f
         \end{equation}
 
    每个子载波的频率 :math:`f_k` 可以被看做是频率间隔 :math:`\Delta f` 的整数倍，即：
