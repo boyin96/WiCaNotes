@@ -93,14 +93,13 @@ _________________________________
 
    G(f)=\int_{-\infty}^{\infty} d t g(t) e^{-i 2 \pi f t}
 
-其中 :math:`g(t)` 是信道脉冲相应。
+其中 :math:`g(t)` 是信道脉冲响应，对应 :math:`G(f)` 是频域响应。
 
-- **Definition 2.** *The length of a frequency interval over which :math:`|G( f )|` is approximately constant is called the coherence bandwidth and denoted by :math:`B_c` (measured in Hz).*
+- **Definition 2.** *The length of a frequency interval over which* :math:`|G( f )|` *is approximately constant is called the coherence bandwidth and denoted by* :math:`B_c` *(measured in Hz).*
 
-可以看出，在频域内信道相应的幅值大概保持不变的一段频率称为相干带宽。现假设传输的信号为正弦信号\ :math:`x(t)=sin(t)=e^{i2\pi ft}`\ ，则有：
+可以看出，使得信道响应在其傅里叶变换频域内的幅值（模）大概保持不变的频段称为相干带宽。现假设传输的信号为正弦信号 :math:`x(t)=sin(t)=e^{i2\pi ft}`，则有：
 
 .. math::
-
 
    y(t)=\left(e^{-i 2 \pi\left(f_{\mathrm{c}}+f\right) \frac{d_{1}}{c}}+e^{-i 2 \pi\left(f_{\mathrm{c}}+f\right) \frac{d_{2}}{c}}\right) e^{i 2 \pi f t}
 
@@ -118,13 +117,11 @@ _________________________________
 
 .. math::
 
-
    \begin{aligned}
    |G(f)| &=\left|e^{-i 2 \pi f \frac{d_{1}}{c}}+e^{-i 2 \pi f \frac{d_{2}}{c}}\right| \\
    &=2\left|\cos \left(\pi f \frac{d_{1}-d_{2}}{c}\right)\right|
    \end{aligned}
 
-|image2|
 
 这是跟中心频率没有关系的表达式。由上图可知，我们定义\ :math:`B_c`\ 为：
 
