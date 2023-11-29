@@ -44,12 +44,15 @@ ___________________________
 
 一条LoS直射路径和一条反射路径，信号带宽足够小，延时考虑为相移的情况下，有：
 
+.. image:: images/two-path_propagation_model.png
+    :align: center
+
 .. math::
 
    \begin{aligned}
-   y(t) &=\left(e^{-i 2 \pi f \mathrm{c} \frac{d_{1}}{c}}+e^{\left.-i 2 \pi f \mathrm{c} \frac{d_{2}}{c}\right)} x(t)\right.\\
-   &=\left(e^{-i 2 \pi \frac{d_{1}}{\lambda}}+e^{-i 2 \pi \frac{d_{2}}{\lambda}}\right) x(t)
-   \end{aligned}
+y(t) & =\left(e^{-i 2 \pi f_{\mathrm{c}} \frac{d_1}{c}}+e^{-i 2 \pi f_{\mathrm{c}} \frac{d_2}{c}}\right) x(t) \\
+& =\left(e^{-i 2 \pi \frac{d_1}{\lambda}}+e^{-i 2 \pi \frac{d_2}{\lambda}}\right) x(t),
+\end{aligned}
 
 假设在(a)位置时，信号刚好能够叠加达到最大，即是，\ :math:`y(t)=2x(t)`\ ，则在(b)时有：
 
