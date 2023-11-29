@@ -51,6 +51,7 @@ LTE 物理层
     :align: center
 
 上图很好地说明了信号是如何被映射到时频域的。这里一个 PRB 是指在一个时隙内的180KHz频谱资源，也就是12个子载波持续0.5ms。这里的 Resource Element 指的是复值的调制信号。上图每个时隙包含了7个 OFDM 符号，因此一个资源块将有12*7，84个 Resource Element，资源块是 LTE 中传输的最小单位。值得说明的是为什么选择15KHz为子载波的间隙（Subcarrier Spacing），这是因为15KHz很好的符合了 OFDM 的指令，将衰落信道转化为一系列可分辨的平坦信道，大大提高了系统的抗衰落能力。此外，在上行链路中，子载波在载波中心频率两边，相反在下行中与载波中心频率一致的子载波不会被使用 (涉及到过高的干扰问题)，具体如下图：
+
 上行：
 
 .. image:: images/uplink.png
@@ -62,6 +63,7 @@ LTE 物理层
     :align: center
 
 - **OFDM 的多子载波传输（OFDM Multicarrier Transmission）：** 我们知道 LTE 的上下行是基于 OFDM 多址技术的，这是一种多子载波传输的方法，这里理解它是如何传输的，有助于我们理解一个 OFDM 符号到底是什么。我将介绍一个 OFDM 符号是如何产生的：
+
   - **step 1**. 首先将星座图映射后 (比如QAM) 的复值信号，即 Resource Element 映射到我们的时频资源栅格上，将这些符号分配好时频资源。如果有 :math:`N` 个间隔为 :math:`\Delta f` 的子载波，则有：
 
    .. math::
@@ -74,9 +76,9 @@ LTE 物理层
 
    .. meta::
 
-    \begin{equation}
-    f_k=k \Delta f
-    \end{equation}
+        \begin{equation}
+        f_k=k \Delta f
+        \end{equation}
 
   - **step 2**. 每一个经过星座图映射之后符号 :math:`a_k` 都是一个复数 :math:`a_k=a+jb` 信号（QAM），接下过经过 OFDM 调制器分别对这些信号进行调制，即是将这些复数信号分别乘以复数子载波，每一个符号被分配一个单独的子载波，即：
 
