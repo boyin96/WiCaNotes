@@ -13,6 +13,7 @@
 
    wireless_channel
    channel_capacity
+   lte
 
 
 .. toctree::
