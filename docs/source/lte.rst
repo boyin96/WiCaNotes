@@ -12,7 +12,7 @@ LTE 物理层
 简介
 ------------
 
-本文介绍 **Long Term Evolution (LTE)** 的无线接入技术以及 **Physical Layer (PHY)**，这里主要学习一下关于 LTE 的物理层 OFDM 相关知识点，了解其底层设计的基本结构。
+本文介绍 **Long Term Evolution (LTE)** 的 **Physical Layer (PHY)**，简单了解一下其底层设计的基本结构。
 
 
 .. _related:
@@ -20,16 +20,30 @@ LTE 物理层
 相关知识
 ----------
 
-- **空中接口（Air Interface）：** LTE 采用的是基于 **Orthogonal Frequency Division Multiplexing Access (OFDMA)** 技术的无线多址接入。其下行采用OFDM，上行采用与之相类似的 **Single-Carrier Frequency Division Multiplexing (SC-FDM)**。相比之前的多址接入技术，OFDMA具有抗多径衰落、支持MIMO、频率选择等诸多优势。
+- **空中接口（Air Interface）：** LTE 采用的是基于 **Orthogonal Frequency Division Multiplexing Access (OFDMA)** 技术的无线多址接入。其下行采用 OFDM，上行采用与之相类似的 **Single-Carrier Frequency Division Multiplexing (SC-FDM)**。相比之前的多址接入技术，OFDMA 具有抗多径衰落、支持 MIMO、频率选择等诸多优势。
 
-- **频谱带宽 (Frequency Bands)：** LTE频谱带宽被3GPP所规定，**Frequency-division Duplex (FDD)** 与 **Time-division Duplex (TDD)**，频分双工与时分双工的频带资源如下 (1-43)：
-**FDD**:
+- **频谱带宽 (Frequency Bands)：** 3GPP规定，**Frequency-division Duplex (FDD)** 与 **Time-division Duplex (TDD)**，频分双工与时分双工的频带资源如下：
+**FDD** for Evolved Universal Terrestrial Radio Access Network (E-UTRAN):
+
+.. image:: images/fdd.png
+    :align: center
+
+**TDD** for Evolved Universal Terrestrial Radio Access Network (E-UTRAN):
+
+.. image:: images/tdd.png
+    :align: center
 
 - **单播与多播 (Unicast and Multicast Services)：** 在LTE中单播是指数据只传输给一个用户，与之相对应的多播 **Multimedia Broadcast/Multicast Services (MBMS)** 一般是指电视、广播以及视频流等数据的传输，其传播都有自己专用的信道与系统。
 
-- **带宽分配 (Allocation of Bandwidth) ：** 大家看到上图中的频谱分配后，不由会想每一段的频谱带宽是如何决定与分配的，比如1号FDD的分配，其分配带宽为60MHz，在这60MHz里面又是如何分配的。这里不得不提及一下几点常识，在LTE物理层中，一个资源块 **Physical Resource Block (PRB)** 带宽为180KHz，其中包含了12个宽带为15KHz的子载波。由IMT-advanced规定了比较灵活的带宽分配，范围为1.4MHz-20MHz，其包含的资源块如下：除了1.4MHz的占用率为77%外，其它频谱占用率达到了90%，之所以不占满是因为有保护频段，防止频谱泄漏。
+- **带宽分配 (Allocation of Bandwidth) ：** LTE 物理层中，一个资源块 **Physical Resource Block (PRB)** 带宽为180KHz，其中包含了12个宽带为15KHz的子载波。由IMT-advanced规定了比较灵活的带宽分配，范围为1.4MHz-20MHz，其包含的资源块如下：除了1.4MHz的占用率为77%外，其它频谱占用率达到了90%，之所以不占满是因为有保护频段，防止频谱泄漏。
 
-- **时域分帧 (Time Framing)：** 在LTE中时间轴上被进行分帧处理，这样有利于信道的估计以应对时变的信道。一帧 (frame) 时长为10ms被分成了10个1ms的子帧 (subframe)，每一个子帧又被分为0.5ms的两个时隙 (time slots)，每一个时隙包含了6或者7个**OFDM符号**，这里需要强调，对后面理解什么叫OFDM符号有帮助。至于为什么这么分，都是协议的规定，如果以后的发展需要更新，那么将随之变化。具体如下图所示：
+.. image:: images/band.png
+    :align: center
+
+- **时域分帧 (Time Framing)：** 在LTE中时间轴上被进行分帧处理，这样有利于信道的估计以应对时变的信道。一帧（frame）时长为10ms被分成了10个1ms的子帧 （subframe），每一个子帧又被分为0.5ms的两个时隙（time slots），每一个时隙包含了6或者7个 **OFDM符号**。具体如下图所示：
+
+.. image:: images/frame.png
+    :align: center
 
 - **时频域的映射 (Time–Frequency Representation) ：** 理解OFDM符号是如何被传输的，其理解该符号是如何被映射到时频域资源的，这一点是非常重要的。信号在经过编码，星座图映射以后变成一个复值信号，此时将会映射到所谓的时频坐标系，该坐标系横坐标是时间，纵坐标是频率。这一步映射相当于是分配好每个信号的资源。
 
