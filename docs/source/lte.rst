@@ -22,7 +22,7 @@ LTE 物理层
 
 - **空中接口（Air Interface）：** LTE 采用的是基于 **Orthogonal Frequency Division Multiplexing Access (OFDMA)** 技术的无线多址接入。其下行采用 OFDM，上行采用与之相类似的 **Single-Carrier Frequency Division Multiplexing (SC-FDM)**。相比之前的多址接入技术，OFDMA 具有抗多径衰落、支持 MIMO、频率选择等诸多优势。
 
-- **频谱带宽 (Frequency Bands)：** 3GPP规定，**Frequency-division Duplex (FDD)** 与 **Time-division Duplex (TDD)**，频分双工与时分双工的频带资源如下：
+- **频谱带宽（Frequency Bands）：** 3GPP规定，**Frequency-division Duplex (FDD)** 与 **Time-division Duplex (TDD)**，频分双工与时分双工的频带资源如下：
 **FDD** for Evolved Universal Terrestrial Radio Access Network (E-UTRAN):
 
 .. image:: images/fdd.png
@@ -33,19 +33,22 @@ LTE 物理层
 .. image:: images/tdd.png
     :align: center
 
-- **单播与多播 (Unicast and Multicast Services)：** 在LTE中单播是指数据只传输给一个用户，与之相对应的多播 **Multimedia Broadcast/Multicast Services (MBMS)** 一般是指电视、广播以及视频流等数据的传输，其传播都有自己专用的信道与系统。
+- **单播与多播（Unicast and Multicast Services）：** 在LTE中单播是指数据只传输给一个用户，与之相对应的多播 **Multimedia Broadcast/Multicast Services（MBMS）** 一般是指电视、广播以及视频流等数据的传输，其传播都有自己专用的信道与系统。
 
-- **带宽分配 (Allocation of Bandwidth) ：** LTE 物理层中，一个资源块 **Physical Resource Block (PRB)** 带宽为180KHz，其中包含了12个宽带为15KHz的子载波。由IMT-advanced规定了比较灵活的带宽分配，范围为1.4MHz-20MHz，其包含的资源块如下：除了1.4MHz的占用率为77%外，其它频谱占用率达到了90%，之所以不占满是因为有保护频段，防止频谱泄漏。
+- **带宽分配（Allocation of Bandwidth）：** LTE 物理层中，一个资源块 **Physical Resource Block（PRB）** 带宽为180KHz，其中包含了12个宽带为15KHz的子载波。由IMT-advanced规定了比较灵活的带宽分配，范围为1.4MHz-20MHz，其包含的资源块如下：除了1.4MHz的占用率为77%外，其它频谱占用率达到了90%，之所以不占满是因为有保护频段，防止频谱泄漏。
 
 .. image:: images/band.png
     :align: center
 
-- **时域分帧 (Time Framing)：** 在LTE中时间轴上被进行分帧处理，这样有利于信道的估计以应对时变的信道。一帧（frame）时长为10ms被分成了10个1ms的子帧 （subframe），每一个子帧又被分为0.5ms的两个时隙（time slots），每一个时隙包含了6或者7个 **OFDM符号**。具体如下图所示：
+- **时域分帧（Time Framing）：** 在LTE中时间轴上被进行分帧处理，这样有利于信道的估计以应对时变的信道。一帧（frame）时长为10ms被分成了10个1ms的子帧 （subframe），每一个子帧又被分为0.5ms的两个时隙（time slots），每一个时隙包含了6或者7个 **OFDM符号**。具体如下图所示：
 
 .. image:: images/frame.png
     :align: center
 
-- **时频域的映射 (Time–Frequency Representation) ：** 理解OFDM符号是如何被传输的，其理解该符号是如何被映射到时频域资源的，这一点是非常重要的。信号在经过编码，星座图映射以后变成一个复值信号，此时将会映射到所谓的时频坐标系，该坐标系横坐标是时间，纵坐标是频率。这一步映射相当于是分配好每个信号的资源。
+- **时频域的映射（Time–Frequency Representation）：** 理解 OFDM 符号是如何被传输的，其理解该符号是如何被映射到时频域资源的，这一点是非常重要的。信号在经过编码，星座图映射以后变成一个复值信号，此时将会映射到所谓的时频坐标系，该坐标系横坐标是时间，纵坐标是频率。这一步映射相当于是分配好每个信号的资源。
+
+.. image:: images/map.png
+    :align: center
 
 上图很好地说明了信号是如何被映射到时频域的。这里一个PRB是指在一个时隙内的180KHz频谱资源，也就是12个子载波持续0.5ms。这里的 Resource Element 指的是复值的调制信号。上图每个时隙包含了7个OFDM符号，因此一个资源块将有12*7，84个 Resource Element，资源块是LTE中传输的最小单位。值得说明的是为什么选择15KHz为子载波的间隙 (Subcarrier Spacing)，这是因为15KHz很好的符合了OFDM的指令，将衰落信道转化为一系列可分辨的平坦信道，大大提高了系统的抗衰落能力。此外，在上行链路中，子载波在载波中心频率两边，相反在下行中与载波中心频率一致的子载波不会被使用 (涉及到过高的干扰问题)，具体如下图：
 In the uplink:
