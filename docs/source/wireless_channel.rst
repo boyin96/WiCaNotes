@@ -38,9 +38,7 @@ ___________________________
 
 那么我们说这个系统是线性时不变系统。LTI 系统是信号与系统处理中的最常见模型，也是最简单的模型，只有在该模型下，我们才会考 DTFT，CTFT，DFT，FFT 等以及它们相关的性质才会成立。由于麦克斯韦方程的线性，系统往往是线性可加的（需要注意的是在某些非线性介质或非线性效应的情况下，电磁波的行为可能会变得更加复杂），但同时由于发送端与接收端的移动性，时不变往往是很难做到的。
 
--  **Definition 1.** *The time during which the channel can be
-   reasonably well viewed as time-invariant is called the coherence time
-   and denoted by :math:`T_c` (measured in seconds).*
+-  **Definition 1.** *The time during which the channel can be reasonably well viewed as time-invariant is called the coherence time and denoted by* :math:`T_c` *(measured in seconds).*
 
 从定义可以看到，在\ :math:`T_c`\ 这段时间内，系统是时不变的，那么这段时间的长度跟什么有关呢？我们考虑一个两径的传播模型：
 |在这里插入图片描述|
