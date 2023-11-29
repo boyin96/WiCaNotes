@@ -54,7 +54,7 @@ ___________________________
     & =\left(e^{-i 2 \pi \frac{d_1}{\lambda}}+e^{-i 2 \pi \frac{d_2}{\lambda}}\right) x(t),
     \end{aligned}
 
-假设在 (a) 位置时，信号刚好能够叠加达到最大，即是， :math:`y(t)=2x(t)`。假设接下来接收端向右移动 :math:`d`，则在 (b) 时有：
+其中 :math:`f_{\mathrm{c}}`是载波频率，:math:`c`是光速。假设在 (a) 位置时，信号刚好能够叠加达到最大，即是， :math:`y(t)=2x(t)`。假设接下来接收端向右移动 :math:`d`，则在 (b) 时有：
 
 .. math::
 
