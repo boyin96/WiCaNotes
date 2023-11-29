@@ -133,30 +133,31 @@ _________________________________
    B_{\mathrm{c}}=\frac{c}{\left|d_{1}-d_{2}\right|} \quad \mathrm{Hz}
 
 .. note::
-    因此我们希望在这段长度的频率范围内，信道幅值响应是一个比较恒定的值。在实际的场景中，信道更加复杂，这里的分母被定义为在所有传播路径中差别最大的路径。当信号的带宽小于相干带宽时，我们认为信号是不会发生失真的。同样相干带宽的倒数我们定义为时延拓展（Time spread），:math:`g(t)` 也被限制在时延拓展之内，相似地，当信号的带宽小于相干带宽，或者说信号的传输时间（周期）大于时延拓展（信号之间没有干扰），我们认为信号是没有失真的。
+    因此我们希望在这段长度的频率范围内，信道幅值响应是一个比较恒定的值。在实际的场景中，信道更加复杂，这里的分母被定义为在所有传播路径中差别最大的路径。当信号的带宽小于相干带宽时，我们认为信号是不会发生失真的。同样相干带宽的倒数我们定义为时延拓展（Time Spread），:math:`g(t)` 也被限制在时延拓展之内，相似地，当信号的带宽小于相干带宽，或者说信号的传输时间（周期）大于时延拓展（信号之间没有干扰），我们认为信号是没有失真的。
 
 相干间隔（Coherence Interval）
 _____________________________
 
--  **Definition 3**\ *. A time-frequency space of duration :math:`T_c`
-   seconds and bandwidth :math:`B_c` Hz is called a coherence interval.*
+-  **Definition 3.** *A time-frequency space of duration* :math:`T_c` *seconds and bandwidth* :math:`B_c` *Hz is called a coherence interval.*
 
 信号在时频域同时满足相干时间与相干带宽的，称之为相干间隔。我们定义一个相干间隔的长度为：
 
 .. math::
 
-
    \tau_{\mathrm{c}}=B_{\mathrm{c}} T_{\mathrm{c}} \quad \text { samples. }
 
-:math:`B_{\mathrm{c}}` 表示频率，即单位时间采样了多少个点，一共采样了
-:math:`T_{\mathrm{c}}`
-秒，因此这里可以理解为样本的个数。下图给出了一些参考的数据： |image3|
+:math:`B_{\mathrm{c}}` 表示频率，即单位时间采样了多少个点，一共采样了 :math:`T_{\mathrm{c}}` 秒，因此这里可以理解为样本的个数。下图给出了一些参考的数据：
+
+.. image:: images/coherence_interval.png
+    :align: center
+
 其中子载波频率为2GHz，波长为15cm。
+
 
 总结
 _____________________________
 
-以下针对相干时间与相干带宽做一下总结：
+以下针对相干时间与相干带宽做一个总结：
 
 -  不管是相干时间还是相干带宽都是描述的信道参数。
 -  相干时间反映的是信道的时间色散效应，其实就是指的是，信道所能保持不变的最大时间间隔，因此我们要保证信号的持续时间小于相干时间。
@@ -168,7 +169,7 @@ _____________________________
 -  在相干时间内，两路信号受到的传输函数也是相似的特性，通常发射的一路信号由于多径效应，有多路到达接收机，若这几路信号的时间间隔在相干时间之内，那么他们具有很强的相关性，接收机都可以认为是有用信号，若大于相干时间，则接收机无法识别，只能认为是干扰信号。
 -  当两个发射信号的频率间隔小于信道的相干带宽，那么这两个经过信道后的，受到的信道传输函数是相似的，由于通常的发射信号不是单一频率的，即一路信号也是占有一定带宽的，如果，这路信号的带宽小于相干带宽，那么它整个信号受到信道的传输函数是相似的，即信道对信号而言是平坦特性的，非频率选择性衰落的。
 
-.. |在这里插入图片描述| image:: https://img-blog.csdnimg.cn/20210112112703142.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_eGlhb2JvX3NjdXQ=,size_16,color_FFFFFF,t_70#pic_center
-.. |image1| image:: https://img-blog.csdnimg.cn/20210112113949683.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_eGlhb2JvX3NjdXQ=,size_16,color_FFFFFF,t_70#pic_center
-.. |image2| image:: https://img-blog.csdnimg.cn/20210112121812859.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_eGlhb2JvX3NjdXQ=,size_16,color_FFFFFF,t_70#pic_center
-.. |image3| image:: https://img-blog.csdnimg.cn/20210112182210258.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_eGlhb2JvX3NjdXQ=,size_16,color_FFFFFF,t_70#pic_center
+参考
+__________
+
+- Marzetta, Thomas L., and Hong Yang. Fundamentals of massive MIMO. Cambridge University Press, 2016.
