@@ -13,6 +13,9 @@ LTE 物理层
 ------------
 本文介绍 **Long Term Evolution (LTE)** 的无线接入技术以及 **Physical Layer (PHY)**，这里主要讲解一下关于 LTE 的物理层 OFDM 相关知识点，了解其底层设计的基本结构。
 
+
+.. _related:
+
 相关知识
 __________
 
@@ -57,6 +60,7 @@ $$
 
  **频域调度 (Frequency-Domain Scheduling)：** 频域的调度是LTE中很重要的一点，由于LTE本身支持不同的频率带宽，OFDM可以根据IFFT和FFT选择不同的符号长度，变化的点数。尽管LTE并没有规定带宽与FFT长度之间的关系，但一般2048与20MHz相关联，其他分配如下图：
 
+.. _reference:
 
 参考
 __________
