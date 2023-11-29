@@ -54,27 +54,27 @@ ___________________________
     & =\left(e^{-i 2 \pi \frac{d_1}{\lambda}}+e^{-i 2 \pi \frac{d_2}{\lambda}}\right) x(t),
     \end{aligned}
 
-假设在(a)位置时，信号刚好能够叠加达到最大，即是， :math:`y(t)=2x(t)`\ ，则在(b)时有：
+假设在 (a) 位置时，信号刚好能够叠加达到最大，即是， :math:`y(t)=2x(t)`。假设接下来接收端向右移动 :math:`d`，则在 (b) 时有：
 
 .. math::
-
 
     \begin{aligned}
     y(t) & =\left(e^{-i 2 \pi \frac{d}{\lambda}}+e^{-i 2 \pi \frac{-d}{\lambda}}\right) x(t) \\
     & =2 \cos \left(2 \pi \frac{d}{\lambda}\right) x(t) .
     \end{aligned}
 
-由表达式可以看出，信号在\ :math:`\lambda/2`\ 之内会呈现周期性变化，也就是说只要移动的距离不超过\ :math:`\lambda/2`\ ，那么我们可以认为是时不变的，如果此时移动速度为\ :math:`v`\ ，那么：
+.. image:: images/cos_lambda.png
+    :align: center
+
+由表达式可以看出，信号在 :math:`\lambda/2` 之内会呈现周期性变化，也就是说只要移动的距离不超过 :math:`\lambda/2` ，那么我们可以认为信道是时不变的，如果此时接收端的移动速度为 :math:`v`，那么：
 
 .. math::
 
-
    T_{\mathrm{c}}=\frac{\lambda}{2 v} \quad \text { seconds. }
 
-|image1|
-这里可以看出相干时间是跟多普勒频移相关的，因此相干时间的倒数我们常常称之为多普勒扩展
-(Doppler spread)，它往往是定义为多普勒效应所造成的最大频偏
-(频谱移动)。信号的传输时间小于相干时间的时候，我们认为信号是不会失真的，也就是不会发生改变。当然，实际信道由直射路径和多个散射路径组成，但不管怎么样，上述的定义往往是可以接受的。
+
+这里可以看出相干时间是因为发射端和接收端相对移动所引起的，那也就意味着与多普勒效应有关，因此相干时间的倒数我们常常称之为多普勒扩展
+(Doppler spread)，它往往是定义为多普勒效应所造成的最大频偏。当然，实际信道由直射路径和多个散射路径组成，但不管怎么样，上述的定义往往是可以接受的。
 
 
 相干带宽（Coherence Bandwidth）
