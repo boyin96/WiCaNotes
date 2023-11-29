@@ -5,14 +5,14 @@
 
 .. note::
 
-   该项目正在积极开发中。欢迎提出问题、分享你的学习经验，或者为仓库做出贡献。
+   该项目正在积极开发中。欢迎提出问题、分享你的学习经验，或者为仓库做出贡献。如果你觉得对你有帮助，请别忘了帮我点个 `start <https://github.com/boyin96/WiCaNotes>`_ 与分享，让知识不断传播。
 
 .. toctree::
    :caption: 无线通信
    :maxdepth: 1
 
    wireless_channel
-   channel
+   channel_capacity
 
 
 .. toctree::
