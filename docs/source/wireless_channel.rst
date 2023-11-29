@@ -83,21 +83,19 @@ ___________________________
 
 相干带宽（Coherence Bandwidth）
 _________________________________
-我们考虑信号的持续时间小于相干时间（\ :math:`T_c`\ ），此时的系统为LTI系统，根据卷积与频域的关系，我们可以得到：
+我们考虑信号的持续时间小于相干时间（:math:`T_c`），此时的系统为 LTI 系统，根据卷积与频域的关系，我们可以得到：
 
 .. math::
-
 
    y(t)=\int_{-\infty}^{\infty} d \tau g(\tau) x(t-\tau)
 
 .. math::
 
-
    G(f)=\int_{-\infty}^{\infty} d t g(t) e^{-i 2 \pi f t}
 
-- **Definition 2**\ *. The length of a frequency interval over which
-:math:`|G( f )|` is approximately constant is called the coherence
-bandwidth and denoted by :math:`B_c` (measured in Hz).*
+其中 :math:`g(t)` 是信道脉冲相应。
+
+- **Definition 2.** *The length of a frequency interval over which :math:`|G( f )|` is approximately constant is called the coherence bandwidth and denoted by :math:`B_c` (measured in Hz).*
 
 可以看出，在频域内信道相应的幅值大概保持不变的一段频率称为相干带宽。现假设传输的信号为正弦信号\ :math:`x(t)=sin(t)=e^{i2\pi ft}`\ ，则有：
 
