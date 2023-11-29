@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3bceeb8a-0821-4702-a3ee-511af78f0083" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/docs/source/images/bandwidth_lambda.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/source/wireless_channel.rst" beforeDir="false" afterPath="$PROJECT_DIR$/docs/source/wireless_channel.rst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
