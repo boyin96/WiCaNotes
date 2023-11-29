@@ -40,12 +40,11 @@ ___________________________
 
 -  **Definition 1.** *The time during which the channel can be reasonably well viewed as time-invariant is called the coherence time and denoted by* :math:`T_c` *(measured in seconds).*
 
-从定义可以看到，在\ :math:`T_c`\ 这段时间内，系统是时不变的，那么这段时间的长度跟什么有关呢？我们考虑一个两径的传播模型：
-|在这里插入图片描述|
+从定义可以看到，在 :math:`T_c` 这段时间内，系统可以视为具有时不变的性质，那么这段时间的长度是由什么决定的或者它的值与什么有关呢？让我们考虑一个简单的两径传播模型：
+
 一条LoS直射路径和一条反射路径，信号带宽足够小，延时考虑为相移的情况下，有：
 
 .. math::
-
 
    \begin{aligned}
    y(t) &=\left(e^{-i 2 \pi f \mathrm{c} \frac{d_{1}}{c}}+e^{\left.-i 2 \pi f \mathrm{c} \frac{d_{2}}{c}\right)} x(t)\right.\\
