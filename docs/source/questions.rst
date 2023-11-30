@@ -200,4 +200,3 @@ Q & A
 
    for closure in closures:
        closure()
-
