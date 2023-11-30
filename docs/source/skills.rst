@@ -18,14 +18,14 @@ Python 编程技巧
 .. code-block:: python
 
     def example_function(arg1, *, kwarg1):
-            """
-            限制只能通过关键字传递参数的函数。
+        """
+        限制只能通过关键字传递参数的函数。
 
-            Parameters:
-                arg1: 位置传递的参数
-                kwarg1: 只能通过关键字传递的参数
-            """
-            print(arg1, kwarg1)
+        Parameters:
+            arg1: 位置传递的参数
+            kwarg1: 只能通过关键字传递的参数
+        """
+        print(arg1, kwarg1)
 
         # 正确的方式：使用关键字传递
         example_function(1, kwarg1=2)
