@@ -27,6 +27,7 @@
    :caption: Python
    :maxdepth: 1
 
+   skills
    magic_functions
    tip
    design_patterns
