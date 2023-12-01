@@ -149,7 +149,7 @@
        say_hello()
 
 
- **2. 类修饰**
+**2. 类修饰**
 
 .. code-block:: python
 
