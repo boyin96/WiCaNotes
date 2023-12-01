@@ -101,4 +101,3 @@ Q & A
 
    print(original_list)  # [1, [2, 3], [4, 5]]
    print(deep_copied_list)  # [1, [999, 3], [4, 5]]
-

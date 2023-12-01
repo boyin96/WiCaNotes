@@ -107,3 +107,94 @@
 
    for closure in closures:
        closure()
+
+
+.. _decorator:
+
+2. Python装饰器详解
+----------------------
+
+装饰器概念
+^^^^^^^^^^^
+
+装饰器是一种用于修改函数或方法行为的机制，它允许你在不修改原始代码的情况下增强或改变函数的功能。装饰器本质上是函数或类，可以接受一个函数作为输入，并返回一个新的函数或方法。
+
+使用场景
+===============
+
+1. **函数修饰**
+
+.. code-block:: python
+
+       def my_decorator(func):
+           def wrapper():
+               print("Something is happening before the function is called.")
+               func()
+               print("Something is happening after the function is called.")
+           return wrapper
+
+       @my_decorator
+       def say_hello():
+           print("Hello!")
+
+       # 调用被修饰后的函数
+       say_hello()
+
+
+1. **类修饰**
+
+.. code-block:: python
+
+    class MyDecorator:
+        def __init__(self, func):
+            self.func = func
+
+        def __call__(self):
+            print("Something is happening before the function is called.")
+            self.func()
+            print("Something is happening after the function is called.")
+
+    @MyDecorator
+    def say_hello():
+        print("Hello!")
+
+    # 调用被修饰后的函数
+    say_hello()
+
+注意事项
+^^^^^^^^^^^
+
+1. **语法糖 @ 的使用**
+
+装饰器可以通过 @decorator 语法糖更方便地应用于函数或方法。这种语法糖等同于 func = decorator(func)。
+
+2. **参数传递**
+
+如果装饰器本身需要接受参数，可以在其内部再定义一层函数，并返回这个函数。
+
+.. code-block:: python
+    def my_decorator_with_args(arg):
+        def decorator(func):
+            def wrapper():
+                print(f"Decorator argument: {arg}")
+                func()
+            return wrapper
+        return decorator
+
+    @my_decorator_with_args("example")
+    def say_hello():
+        print("Hello!")
+
+    # 调用被修饰后的函数
+    say_hello()
+
+**3. 多个装饰器的顺序**
+
+多个装饰器可以串联使用，但是它们的顺序很重要，因为它们按照从下到上的顺序执行。
+
+.. code-block:: python
+
+    @decorator1
+    @decorator2
+    def my_function():
+        pass
