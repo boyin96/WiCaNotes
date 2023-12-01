@@ -117,7 +117,10 @@
 装饰器概念
 ^^^^^^^^^^^
 
-装饰器是一种用于修改函数或方法行为的机制，它允许你在不修改原始代码的情况下增强或改变函数的功能。装饰器本质上是函数或类，可以接受一个函数作为输入，并返回一个新的函数或方法。
+装饰器是一种用于修改函数或方法行为的机制，它允许你在不修改原始代码的情况下增强或改变函数的功能。**装饰器本质上是函数或类，可以接受一个函数作为输入，并返回一个新的函数或方法。**
+
+装饰器是可调用的对象，其参数是另一个函数（被装饰的函数）。 装饰器可能会处理被装饰的函数，然后把它返回，或者将其替换成另一个函数或可调用对象。多数装饰器会修改被装饰的函数。通常，它们会定义一个内部函数，然后将其返回，替换被装饰的函数。
+
 
 使用场景
 ^^^^^^^^^^^^^
@@ -126,12 +129,17 @@
 
 .. code-block:: python
 
-       def my_decorator(func):
+       def my_decorator_1(func):
            def wrapper():
                print("Something is happening before the function is called.")
                func()
                print("Something is happening after the function is called.")
            return wrapper
+
+       # 或者直接返回
+       def my_decorator_2(func):
+           # Do something...
+           return func
 
        @my_decorator
        def say_hello():
