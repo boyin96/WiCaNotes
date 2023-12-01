@@ -111,7 +111,7 @@
 
 .. _decorator:
 
-2. Python装饰器详解
+2. Python 装饰器详解
 ----------------------
 
 装饰器概念
@@ -199,3 +199,33 @@
     @decorator2
     def my_function():
         pass
+
+**4. 保留原函数的签名和字符串文档**
+
+如果想保留装饰器后函数的签名，可以使用functools模块中的wraps装饰器。wraps装饰器实际上是一个装饰器工厂函数，它用于包装一个装饰器，确保被装饰的函数保留原始函数的元信息，包括函数名、文档字符串、参数签名等。
+
+.. code-block:: python
+
+    from functools import wraps
+
+    def my_decorator(func):
+        @wraps(func)
+        def wrapper(*args, **kwargs):
+            print("Something is happening before the function is called.")
+            result = func(*args, **kwargs)
+            print("Something is happening after the function is called.")
+            return result
+        return wrapper
+
+    @my_decorator
+    def say_hello(name):
+        """A simple function that greets a person."""
+        print(f"Hello, {name}!")
+
+    # 使用装饰后的函数，保留了原函数的签名和文档字符串
+    say_hello("John")
+
+    # 输出函数签名
+    print(say_hello.__name__)  # 输出: say_hello
+    print(say_hello.__doc__)   # 输出: A simple function that greets a person.
+
