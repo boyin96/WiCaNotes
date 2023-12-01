@@ -266,3 +266,48 @@
 3. Python 描述符
 -------------------------
 
+描述符是 Python 中用于定制属性访问行为的强大特性。本文将介绍描述符的定义、使用以及注意事项。
+
+定义描述符
+^^^^^^^^^^^^^^
+
+描述符是实现了 ``__get__``、``__set__`` 和 ``__delete__`` 方法的对象，用于控制属性的访问、赋值和删除操作。
+
+一个描述符是一个具有以下方法的对象：
+
+- `__get__(self, instance, owner)`: 用于获取属性的值。
+- `__set__(self, instance, value)`: 用于设置属性的值。
+- `__delete__(self, instance)`: 用于删除属性。
+
+使用描述符
+^^^^^^^^^^^^^^^^^^^^
+
+描述符通常被用于类的属性中，可以通过将描述符实例分配给类的属性来使用。描述符的 `__get__` 方法用于获取属性值，`__set__` 用于设置属性值。
+
+.. code-block:: python
+
+   class DescriptorExample:
+       def __init__(self, initial_value=None):
+           self._value = initial_value
+
+       def __get__(self, instance, owner):
+           return self._value
+
+       def __set__(self, instance, value):
+           self._value = value
+
+   class MyClass:
+       my_property = DescriptorExample(42)
+
+   # 使用描述符
+   obj = MyClass()
+   print(obj.my_property)    # 获取属性值
+   obj.my_property = 100     # 设置属性值
+   print(obj.my_property)    # 再次获取属性值
+
+注意事项
+^^^^^^^^^^^^^^^^
+
+- 小心属性命名冲突，确保描述符实例的名称与其所描述的属性的名称相同。
+- 描述符可以组合在一起形成描述符链，提供更复杂的属性访问行为。
+- 描述符的优先级较高，如果同时定义了描述符和普通属性，描述符的 `__get__` 方法会在普通属性之前被调用。
