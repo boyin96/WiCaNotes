@@ -260,3 +260,9 @@
     # Decorator is executed when the function is defined.
 
 *装饰器函数与被装饰的函数在同一个模块中定义。实际情况是，装饰器通常在一个模块中定义，然后应用到其他模块中的函数上。*
+
+.. _descriptor:
+
+3. Python 描述符
+-------------------------
+
