@@ -129,24 +129,24 @@
 
 .. code-block:: python
 
-       def my_decorator_1(func):
-           def wrapper():
-               print("Something is happening before the function is called.")
-               func()
-               print("Something is happening after the function is called.")
-           return wrapper
+   def my_decorator_1(func):
+       def wrapper():
+           print("Something is happening before the function is called.")
+           func()
+           print("Something is happening after the function is called.")
+       return wrapper
 
-       # 或者直接返回
-       def my_decorator_2(func):
-           # Do something...
-           return func
+   # 或者直接返回
+   def my_decorator_2(func):
+       # Do something...
+       return func
 
-       @my_decorator
-       def say_hello():
-           print("Hello!")
+   @my_decorator
+   def say_hello():
+       print("Hello!")
 
-       # 调用被修饰后的函数
-       say_hello()
+   # 调用被修饰后的函数
+   say_hello()
 
 
 **2. 类修饰**
