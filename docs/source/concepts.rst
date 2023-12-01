@@ -237,3 +237,26 @@
     print(say_hello.__name__)  # 输出: say_hello
     print(say_hello.__doc__)   # 输出: A simple function that greets a person.
 
+**5. 装饰器执行时间**
+
+装饰器的一个关键特性是，它们在被装饰的函数定义之后立即运行。这通常是在导入时（即 Python 加载模块时）。
+
+装饰器是在定义函数时被调用的，而不是在函数被调用时。当Python解释器加载模块并遇到被装饰的函数定义时，装饰器会立即执行。这意味着装饰器的代码在程序运行过程中只执行一次。
+
+.. code-block:: python
+
+    def my_decorator(func):
+        print("Decorator is executed when the function is defined.")
+        def wrapper():
+            print("Wrapper is executed when the decorated function is called.")
+            func()
+        return wrapper
+
+    @my_decorator
+    def say_hello():
+        print("Hello!")
+
+    # Output:
+    # Decorator is executed when the function is defined.
+
+**装饰器函数与被装饰的函数在同一个模块中定义。实际情况是，装饰器通常在一个模块中定义，然后应用到其他模块中的函数上。**
