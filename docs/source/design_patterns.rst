@@ -84,6 +84,38 @@
             self._factories[str(key)] = factory
 
 
+.. _prototype:
+
+3. 原型模式（Prototype Pattern）
+----------------------------------
+
+通过复制现有对象来创建新对象，而不是通过实例化新的对象。这种模式适用于创建成本较高或复杂对象的场景，以提高性能和减少资源消耗。
+
+.. code-block:: python
+
+    from copy import deepcopy
+    from types import MethodType
+
+
+    class Prototype(object):
+
+        def prototype(self, **attributes):
+
+            obj = deepcopy(self)
+            for attribute in attributes:
+                if callable(attributes[attribute]):
+                    setattr(obj, attribute, MethodType(attributes[attribute], obj))
+                else:
+                    setattr(obj, attribute, attributes[attribute])
+
+            return obj
+
+.. _singleton:
+
+4. 单例模式（Singleton Pattern）
+----------------------------------
+
+
 .. _reference:
 
 参考
