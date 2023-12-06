@@ -126,6 +126,7 @@ exc_type: 表示在 with 语句块内发生的异常的类型，如果没有异�
 ``__dict__``: 包含对象命名空间的字典。一个包含对象属性的字典，其中键是属性名，值是相应的属性值。如果是类，则有自己的__dict__属性，用于存放类的静态函数、类函数、普通函数、全局变量以及一些内置的属性。
 
 .. code-block:: python
+
    class Person:
        def __init__(self,_obj):
            self.name = _obj['name']
