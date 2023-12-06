@@ -67,9 +67,9 @@
 
 访问控制
 ^^^^^^^^^^^^^^^^
-``__setattr__(self, name, value)``: 设置属性值时调用，例如 obj.attr = value。注意防止无限递归的问题。
+``__setattr__(self, name, value)``: 设置属性值时调用，例如 obj.attr = value。注意防止无限递归的问题。``setattr()`` 调用该方法。
 
-``__getattr__(self, name)``: 获取不存在的属性时调用，例如 obj.nonexistent_attr。方法只有在尝试访问不存在的属性时才会被调用，如果存在该属性则不会调用该方法。
+``__getattr__(self, name)``: 获取不存在的属性时调用，例如 obj.nonexistent_attr。方法只有在尝试访问不存在的属性时才会被调用，如果存在该属性则不会调用该方法。``getattr()`` 调用该方法。
 
 ``__delattr__(self, name)``: 删除属性时调用，例如 del obj.attr。
 
