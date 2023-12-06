@@ -34,3 +34,4 @@
    tip
    questions
    pathlib
+   dataclass
