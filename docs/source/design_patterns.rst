@@ -124,7 +124,52 @@
 
 它允许通过将对象放入包装器类中来动态地改变对象的行为。这种模式在不改变原始类接口的情况下，通过添加新功能来扩展对象的功能。
 
+.. code-block:: python
 
+    from functools import partial
+    from abc import ABCMeta, abstractmethod
+
+
+    class Decorator(object, metaclass=ABCMeta):
+
+        def __get__(self, instance, owner):
+
+            return partial(self.__call__, instance)
+
+        @abstractmethod
+        def __call__(self, *args, **kwargs):
+
+            pass
+
+
+    class DecoratorSimple(Decorator, metaclass=ABCMeta):
+
+        def __init__(self, func):
+
+            self.func = func
+
+
+    class DecoratorComplex(Decorator, metaclass=ABCMeta):
+
+        @abstractmethod
+        def __init__(self, *args, **kwargs):
+
+            pass
+
+        @abstractmethod
+        def __call__(self, func, *args, **kwargs):
+
+            pass
+
+
+    class CallWrapper(DecoratorSimple):
+
+        def __call__(self, instance, func):
+
+            def wrapped(*args, **kwargs):
+                return self.func(instance, func, *args, **kwargs)
+
+            return wrapped
 
 .. _Behavioral_Patterns:
 
