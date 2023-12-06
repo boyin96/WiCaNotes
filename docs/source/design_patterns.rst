@@ -47,3 +47,38 @@
             cls.__instance = type.__call__(cls, *args, **kwargs)
 
         return cls.__instance
+
+.. _factory:
+
+2. 工厂方法模式（Factory Method Pattern）和抽象工厂模式（Abstract Factory Pattern）
+----------------------------------
+
+在工厂方法模式中，定义一个创建对象的**接口**，但将实际的创建工作推迟到子类中。这样每个子类都可以通过实现**工厂方法**来创建具体的对象。工厂方法模式通过将对象的实例化延迟到子类来实现解耦。
+
+抽象工厂模式提供一个**接口**，用于创建一系列**相关或相互依赖**的对象，而无需指定它们的具体类。它是工厂方法模式的推广，适用于需要创建一组相关或相互依赖的对象的情况。
+
+.. code-block:: python
+
+    from abc import abstractmethod, ABCMeta
+
+    class Factory(object, metaclass=ABCMeta):
+
+        @abstractmethod
+        def create(self, **kwargs):
+
+            pass
+
+    class AbstractFactory(Factory, metaclass=ABCMeta):
+
+        def __init__(self):
+
+            self._factories = dict()
+
+        @abstractmethod
+        def create(self, **kwargs):
+
+            pass
+
+        def _register(self, key, factory):
+
+            self._factories[str(key)] = factory
