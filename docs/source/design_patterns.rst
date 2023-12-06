@@ -110,10 +110,6 @@
 
             return obj
 
-.. _singleton:
-
-4. 单例模式（Singleton Pattern）
-----------------------------------
 
 
 .. _reference:
