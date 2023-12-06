@@ -82,3 +82,13 @@
         def _register(self, key, factory):
 
             self._factories[str(key)] = factory
+
+
+.. _reference:
+
+参考
+============
+
+- `python-patterns <https://github.com/faif/python-patterns>`_
+
+- `PyPattyrn <https://github.com/tylerlaberge/PyPattyrn>`_
