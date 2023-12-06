@@ -25,9 +25,10 @@ pathlib 库讲解
    - ``Path().cwd()``: 获取当前路径。
    - ``Path().home()``: 获取用户 home 路径。
 
+
 2. 路径操作
 
-我们以路径 *C:\Users\boyin\Downloads\demo.txt* 为例。
+  我们以路径 *C:\Users\boyin\Downloads\demo.txt* 为例。
 
    - ``resolve()``: 返回规范化的绝对路径，*C:\Users\boyin\Downloads\demo.txt*。
    - ``parent``: 返回路径的父目录，*C:\Users\boyin\Downloads*。
@@ -71,7 +72,7 @@ pathlib 库讲解
 
 8. 其他
 
-
+   - ``replace()``: 移动文件。
 
 
 .. _conclusion:
