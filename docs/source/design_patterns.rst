@@ -129,7 +129,6 @@
     from functools import partial
     from abc import ABCMeta, abstractmethod
 
-
     class Decorator(object, metaclass=ABCMeta):
 
         def __get__(self, instance, owner):
@@ -141,13 +140,11 @@
 
             pass
 
-
     class DecoratorSimple(Decorator, metaclass=ABCMeta):
 
         def __init__(self, func):
 
             self.func = func
-
 
     class DecoratorComplex(Decorator, metaclass=ABCMeta):
 
@@ -160,7 +157,6 @@
         def __call__(self, func, *args, **kwargs):
 
             pass
-
 
     class CallWrapper(DecoratorSimple):
 
