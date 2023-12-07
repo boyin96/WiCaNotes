@@ -1,7 +1,7 @@
 .. _dataclass:
 
 ======================
-dataclass 库讲解
+dataclasses 库讲解
 ======================
 
 .. contents:: :local:
@@ -11,93 +11,93 @@ dataclass 库讲解
 简介
 -----------------------
 
-``dataclass`` 是 Python 3.7 以上标准库中的一个模块，旨在简化创建和管理数据类（data class）的过程。数据类是一种用于存储数据的特殊类，它通过自动生成一些常见的特殊方法，简化了类的定义，使得代码更加清晰和简洁。
+``dataclasses`` 是 Python 3.7 以上标准库中的一个模块，旨在简化创建和管理数据类（data class）的过程。数据类是一种用于存储数据的特殊类，它通过自动生成一些常见的特殊方法，简化了类的定义，使得代码更加清晰和简洁。
 
 
 与其他数据类型比较
 ------------------
 
 1. **与字典（dict）的比较：**
+
    - 字典是一种无序的键值对集合，通常用于表示动态的、灵活的数据结构。然而，字典不提供类型检查和结构化数据的便利性。
    - 数据类提供了类型注解和自动生成的特殊方法，使得数据的结构更为明确，同时不失灵活性。
 
 2. **与元组（tuple）和命名元组（namedtuple）的比较：**
+
    - 元组是不可变的序列，而数据类是可变的。
    - 命名元组提供了字段名称，但是不支持添加、删除、修改字段。
    - 数据类在功能上类似于命名元组，但提供了更多的灵活性和功能。
 
 3. **与自定义类的比较：**
-   - 自定义类需要手动编写大量的特殊方法，而数据类通过 `@dataclass` 装饰器自动生成这些方法。
+
+   - 自定义类需要手动编写大量的特殊方法，而数据类通过 ``@dataclass`` 装饰器自动生成这些方法。
    - 数据类提供了更简洁的语法，使得创建简单的数据容器更为便利。
 
+.. _example:
+
+简单例子
+---------------------
+
+.. code-block:: python
+
+    from dataclasses import dataclass
+
+    @dataclass
+    class InventoryItem:
+
+        name: str
+        unit_price: float
+        quantity_on_hand: int = 0
+
+        def total_cost(self) -> float:
+            return self.unit_price * self.quantity_on_hand
+
+    # 等价于
+
+    def __init__(self, name: str, unit_price: float, quantity_on_hand: int = 0):
+        self.name = name
+        self.unit_price = unit_price
+        self.quantity_on_hand = quantity_on_hand
 
 .. _dataclass_use:
 
 常见方法与属性
 ----------------------------
 
-1. 创建路径对象
+1. dataclasses.dataclass
 ^^^^^^^^^^^^^^^^^^^
 
-   - ``Path()``: 创建一个路径对象。
-   - ``Path().cwd()``: 获取当前路径。
-   - ``Path().home()``: 获取用户 home 路径。
+``dataclass(*, init=True, repr=True, eq=True, order=False, unsafe_hash=False, frozen=False, match_args=True, kw_only=False, slots=False, weakref_slot=False)``
 
+以下等价：
 
-2. 路径操作
+.. code-block:: python
+
+    @dataclass
+    class C:
+        ...
+
+    @dataclass()
+    class C:
+        ...
+
+    @dataclass(init=True, repr=True, eq=True, order=False, unsafe_hash=False, frozen=False,
+               match_args=True, kw_only=False, slots=False, weakref_slot=False)
+    class C:
+
+2. dataclasses.field
 ^^^^^^^^^^^^^^^^^^^
 
-我们以路径 *C:\Users\boyin\Downloads\demo.txt* 为例。
+``dataclasses.field(*, default=MISSING, default_factory=MISSING, init=True, repr=True, hash=None, compare=True, metadata=None, kw_only=MISSING)``
 
-   - ``resolve()``: 返回规范化的绝对路径，*C:\Users\boyin\Downloads\demo.txt*。
-   - ``parent``: 返回路径的父目录，*C:\Users\boyin\Downloads*。
-   - ``parents``: 返回路径的所有父目录。
-   - ``name``: 返回路径的基本名称（文件名或目录名），demo.txt。
-   - ``suffix``: 返回路径的后缀，.txt。
-   - ``stem``: 返回路径的文件名（不包含后缀），demo。
-   - ``anchor``: 返回锚，C:\。
+.. code-block:: python
 
-3. 文件/目录检查
-^^^^^^^^^^^^^^^^^^^
+    @dataclass
+    class C:
+        mylist: list[int] = field(default_factory=list)
 
-   - ``exists()``: 判断路径是否存在。
-   - ``is_file()``: 判断路径是否是文件。
-   - ``is_dir()``: 判断路径是否是目录。
-
-4. 文件/目录操作
-^^^^^^^^^^^^^^^^^^^
-
-以下方法中有参数 ``exist_ok`` 如果设置为 True 则表示文件存在不进行任何操作，否则报错。``parents`` 设置为 True 则表示可以创建多级目录，否则报错。
-
-   - ``mkdir()``: 创建目录。
-   - ``touch()``: 创建文件。
-   - ``unlink()``: 删除文件（危险操作，慎重）。
-   - ``rmdir()``: 删除目录（危险操作，慎重）。
-
-5. 路径拼接
-^^^^^^^^^^^^^^^^^^^
-
-   - ``/``: 实例化的 ``Path`` 路径可以使用 ``/`` 操作符拼接路径。
-   - ``joinpath()``: 实现路径拼接。
-
-6. 遍历目录
-^^^^^^^^^^^^^^^^^^^
-
-   - ``glob(pattern)``: 返回与指定模式匹配的所有路径（使用正则表达式匹配指定的路径）。
-   - ``iterdir()``: 返回目录中所有条目的迭代器（文件夹和文件）。
-
-7. 文件内容读写
-^^^^^^^^^^^^^^^^^^^
-
-   - ``read_text()``: 读取文本文件内容。
-   - ``write_text()``: 将文本写入文件。
-   - ``read_bytes()``: 读取二进制文件内容。
-   - ``write_bytes()``: 将二进制数据写入文件。
-
-8. 其他
-^^^^^^^^^^^^^^^^^^^
-
-   - ``replace()``: 移动文件。
+    c = C()
+    c.mylist += [1, 2, 3]
 
 
 .. _conclusion:
@@ -105,17 +105,9 @@ dataclass 库讲解
 总结
 ------
 
-- 面向对象的 API：``pathlib`` 提供了一个面向对象的 API，使得路径操作更加直观和面向对象。你可以使用路径对象进行各种操作，而不再需要通过字符串函数来处理路径。
+- ``dataclass`` 提供了一种简单而强大的方式来定义数据类，减少了样板代码，提高了代码的可读性和可维护性。
 
-- 更简洁的语法：使用 / 操作符可以更直观地拼接路径，而不再需要使用 ``os.path.join()``。这样可以减少代码的嵌套和提高可读性。
-
-- 路径操作方法：``pathlib`` 提供了许多有用的路径操作方法，获取路径信息更加方便。
-
-- 更好的可移植性：``pathlib`` 代码在不同操作系统上更具可移植性，因为它自动处理了不同操作系统中的路径分隔符和其他细节。这使得你的代码更容易在不同平台上运行。
-
-- 更直观的文件/目录检查和操作：使用 ``pathlib`` 的 ``is_file()``、``is_dir()``、``mkdir()`` 等方法，可以更直观地进行文件和目录的检查和操作，而不再需要使用 ``os.path.isfile()``、``os.path.isdir()`` 等。
-
-总而言之，``pathlib`` 提供了更现代、更直观的路径操作方式，使得代码更简洁、可读性更好，并且更适用于面向对象的编程风格。如果你在使用 Python 3.7 及更高版本，我强烈推荐使用 ``pathlib`` 来处理路径操作。
+- 它适用于需要存储数据、进行比较和输出字符串表示的场景，尤其在数据处理、配置等方面有着广泛的应用。
 
 
 .. _reference:

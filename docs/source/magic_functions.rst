@@ -179,4 +179,6 @@ exc_type: 表示在 with 语句块内发生的异常的类型，如果没有异�
 
 - `Python 官方文档 - Data Model <https://docs.python.org/3/reference/datamodel.html>`_
 
+- `Python 官方文档 - Special method names <https://docs.python.org/3/reference/datamodel.html#specialnames>`_
+
 - `Python Magic Methods by Example <https://rszalski.github.io/magicmethods/>`_
