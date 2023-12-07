@@ -102,7 +102,6 @@ Optional[X] 等价于 X | None （或 Union[X, None] ） 。
 
 联合类型； Union[X, Y] 等价于 X | Y ，意味着满足 X 或 Y 之一。
 
-注意：
 
 - Union[Union[int, str], float] == Union[int, str, float]
 
