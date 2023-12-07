@@ -165,7 +165,7 @@ exc_type: 表示在 with 语句块内发生的异常的类型，如果没有异�
 
 .. note::
 
-    根据 Python 官网关于`类 <https://docs.python.org/3/tutorial/classes.html>`_ 的说明：
+    根据 Python 官网关于 `类 <https://docs.python.org/3/tutorial/classes.html>`_ 的说明：
     模块对象有一个秘密的只读属性 __dict__，它返回用于实现模块命名空间的字典；__dict__ 是属性但不是全局名称。 显然，使用这个将违反命名空间实现的抽象，应当仅被用于事后调试器之类的场合。
 
 模块
