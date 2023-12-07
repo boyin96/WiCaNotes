@@ -24,7 +24,7 @@ typing 库讲解
 
 .. code-block:: python
 
-   from typing import List, Tuple, Any
+   from typing import Any
 
    name: str = "Borg"
    age: int = 26
@@ -33,7 +33,7 @@ typing 库讲解
    def add_numbers(a: int, b: int) -> int:
        return a + b
 
-   def process_data(data: List[Tuple[str, int]]) -> None:
+   def process_data(data: list[tuple[str, int]]) -> None:
        for item in data:
            print(f"Name: {item[0]}, Age: {item[1]}")
 
@@ -87,25 +87,35 @@ typing 库讲解
    - ``/``: 实例化的 ``Path`` 路径可以使用 ``/`` 操作符拼接路径。
    - ``joinpath()``: 实现路径拼接。
 
-6. 遍历目录
+6. typing.Any
 ^^^^^^^^^^^^^^^^^^^
 
-   - ``glob(pattern)``: 返回与指定模式匹配的所有路径（使用正则表达式匹配指定的路径）。
-   - ``iterdir()``: 返回目录中所有条目的迭代器（文件夹和文件）。
+特殊类型，表示没有约束的类型。
 
-7. 文件内容读写
+7. typing.Optional
 ^^^^^^^^^^^^^^^^^^^
 
-   - ``read_text()``: 读取文本文件内容。
-   - ``write_text()``: 将文本写入文件。
-   - ``read_bytes()``: 读取二进制文件内容。
-   - ``write_bytes()``: 将二进制数据写入文件。
+Optional[X] 等价于 X | None （或 Union[X, None] ） 。
 
-8. 其他
+8. typing.Union
 ^^^^^^^^^^^^^^^^^^^
 
-   - ``replace()``: 移动文件。
+联合类型； Union[X, Y] 等价于 X | Y ，意味着满足 X 或 Y 之一。
 
+注意：
+
+- Union[Union[int, str], float] == Union[int, str, float]
+
+- Union[int] == int
+
+- Union[int, str, int] == Union[int, str] == int | str
+
+- Union[int, str] == Union[str, int]
+
+9. typing.ClassVar
+^^^^^^^^^^^^^^^^^^^
+
+特殊类型注解构造，用于标注类变量。
 
 .. _conclusion:
 
