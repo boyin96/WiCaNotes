@@ -11,12 +11,36 @@ typing 库讲解
 简介
 -----------------------
 
-``typing`` 是 Python 标准库中的一个模块，用于处理文件系统路径。它提供了一个面向对象的 API，使得路径操作更加简便和易读。要求 **Python 3.4** 及以上。
+``typing`` 是 Python 标准库中的一个模块，用于支持类型提示和类型检查。它提供了一组工具，用于在代码中添加类型注解，以提高代码的可读性和可维护性，并且可以被一些工具用于静态类型检查。要求 **Python 3.5** 及以上。
+
+.. note::
+
+   根据 `PEP 585 <https://peps.python.org/pep-0585/>`_ ，推荐使用 Python 内置的类型进行注解，往后 ``typing`` 中的类型可能被弃用。
+
+.. _example:
+
+简单例子
+---------------
+
+.. code-block:: python
+
+   from typing import List, Tuple, Any
+
+   name: str = "Borg"
+   age: int = 26
+   money: Any = None
+
+   def add_numbers(a: int, b: int) -> int:
+       return a + b
+
+   def process_data(data: List[Tuple[str, int]]) -> None:
+       for item in data:
+           print(f"Name: {item[0]}, Age: {item[1]}")
 
 
-.. _pathlib_use:
+.. _typing_use:
 
-常见方法与属性
+注解简单分类与使用
 ----------------------------
 
 1. 创建路径对象
@@ -88,22 +112,11 @@ typing 库讲解
 总结
 ------
 
-- 面向对象的 API：``pathlib`` 提供了一个面向对象的 API，使得路径操作更加直观和面向对象。你可以使用路径对象进行各种操作，而不再需要通过字符串函数来处理路径。
-
-- 更简洁的语法：使用 / 操作符可以更直观地拼接路径，而不再需要使用 ``os.path.join()``。这样可以减少代码的嵌套和提高可读性。
-
-- 路径操作方法：``pathlib`` 提供了许多有用的路径操作方法，获取路径信息更加方便。
-
-- 更好的可移植性：``pathlib`` 代码在不同操作系统上更具可移植性，因为它自动处理了不同操作系统中的路径分隔符和其他细节。这使得你的代码更容易在不同平台上运行。
-
-- 更直观的文件/目录检查和操作：使用 ``pathlib`` 的 ``is_file()``、``is_dir()``、``mkdir()`` 等方法，可以更直观地进行文件和目录的检查和操作，而不再需要使用 ``os.path.isfile()``、``os.path.isdir()`` 等。
-
-总而言之，``pathlib`` 提供了更现代、更直观的路径操作方式，使得代码更简洁、可读性更好，并且更适用于面向对象的编程风格。
-
+总而言之，``typing`` 模块是 Python 中支持类型提示和类型检查的重要工具之一。通过在代码中添加类型注解，可以提高代码的可读性，帮助开发者更好地理解和维护代码。它支持复杂的类型表示，包括联合类型、可选类型和泛型。在类型检查工具的支持下，可以在开发阶段捕获一些潜在的类型错误，提高代码的质量和可靠性。个人建议尽可能对自己的代码进行注解，提高可读性以及便于检查。
 
 .. _reference:
 
 参考
 ---------
 
-- `Python 官方文档 - pathlib <https://docs.python.org/3/library/pathlib.html>`_
+- `Python 官方文档 - typing <https://docs.python.org/3/library/typing.html>`_
