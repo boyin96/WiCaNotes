@@ -15,7 +15,7 @@ typing 库讲解
 
 .. note::
 
-   根据 `PEP 585 <https://peps.python.org/pep-0585/>`_ ，推荐使用 Python 内置的类型进行注解，往后 ``typing`` 中的类型可能被弃用。
+   根据 `PEP 585 <https://peps.python.org/pep-0585/>`_ ，推荐使用 Python 内置的类型以及 ``collections`` 模块中的类型进行注解，往后 ``typing`` 中的类型可能被弃用。Python 3.9 以后版本支持泛化的内置类型，例如 ``list``，``tuple`` 等。
 
 .. _example:
 
