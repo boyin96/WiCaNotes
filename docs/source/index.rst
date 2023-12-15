@@ -36,3 +36,4 @@
    pathlib
    typing
    dataclass
+   pytorch
